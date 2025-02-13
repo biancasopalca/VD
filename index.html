@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 2rem;
+        }
+
+        body {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            background-color: pink;
+        }
+
+        button {
+            padding: 1rem;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        .yes {
+            background-color: lightgreen;
+        }
+
+            .yes:hover {
+                background-color: green;
+            }
+
+        .no {
+            background-color: red;
+            color: white;
+        }
+
+            .no:hover {
+                background-color: darkred;
+            }
+
+        img {
+            margin-top: 20px;
+            width: 300px;
+            height: 300px;
+            display: none; /* Imaginea e ascunsă inițial */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Will you be my Valentine? ❤️</h1>
+    <img src="pisicutze.gif" width="300px" height="300px">
+
+    <!-- Imaginea care se va schimba -->
+    <img id="responseImage" src="" alt="">
+
+    <div class="buttons">
+        <button class="yes" onclick="showImage('yes')">Yes</button>
+        <button class="no" onclick="showImage('no')">No</button>
+    </div>
+
+    <script>
+        function showImage(answer) {
+            let image = document.getElementById("responseImage");
+
+            if (answer === 'yes') {
+                image.src = "happy.gif"; // Imagine pentru răspuns pozitiv
+            } else {
+                image.src = "sad.gif"; // Imagine pentru răspuns negativ
+            }
+
+            image.style.display = "block"; // Afișează imaginea
+        }
+    </script>
+
+</body>
+</html>
